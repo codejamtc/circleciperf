@@ -1,0 +1,17 @@
+name: Branch Synchronization - TCX
+
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Push to Azure DevOps
+        run: |
+          git remote add secondary https://${{ secrets.TCX_AZURE_PAT }}@dev.azure.com/codejamqa/tcx-azure-devops-ext-codejam/_git/tcx-azure-devops-ext-codejam
+          git push secondary HEAD:refs/heads/master --force --q
