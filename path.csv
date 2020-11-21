@@ -1,0 +1,9 @@
+path
+/v5/challenges/?startDateEnd=2020-11-30T06%3A30%3A00.000Z&endDateStart=2020-11-01T06%3A30%3A00.000Z&status=Active&isLightweight=true&perPage=1&tracks[]=Dev&tracks[]=Des&tracks[]=DS&tracks[]=QA
+/v5/challenges/?status=Active&perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=Des&tracks[]=DS&tracks[]=QA
+/v5/challenges/?status=Active&perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=Des
+/v5/challenges/?status=Active&perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=Dev
+/v5/challenges/?status=Active&perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=DS
+/v5/challenges/?endDateStart=2020-11-01T06%3A30%3A00.000Z&status=Active&perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=DS&tracks[]=Des&tracks[]=Dev&tracks[]=QA
+/v5/challenges/?perPage=10&page=1&sortBy=startDate&sortOrder=desc&tags[]=Bug%20Hunt&tracks[]=Dev&tracks[]=Des&tracks[]=DS&tracks[]=QA
+/v5/challenges/?perPage=10&page=1&sortBy=startDate&sortOrder=desc&tracks[]=Dev&tracks[]=Des&tracks[]=DS&tracks[]=QA&types[]=F2F
