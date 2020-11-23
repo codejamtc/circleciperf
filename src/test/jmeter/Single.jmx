@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="25UV" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Topcoder Challenges Listing Page Performance" enabled="true">
       <stringProp name="TestPlan.comments">Check the Performance between the v4 and v5 challenges listing page</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -12,54 +12,20 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Load Testing 25  VU [Topcoder-Dev]" enabled="true">
-        <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="474627902">
-            <stringProp name="53">5</stringProp>
-            <stringProp name="0">0</stringProp>
-            <stringProp name="53">5</stringProp>
-            <stringProp name="1722">60</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-1166763902">
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="1727">65</stringProp>
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="1722">60</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="744374261">
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="48723">135</stringProp>
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="48687">120</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-58744083">
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="49777">265</stringProp>
-            <stringProp name="1567">10</stringProp>
-            <stringProp name="1722">60</stringProp>
-            <stringProp name="1567">10</stringProp>
-          </collectionProp>
-          <collectionProp name="-409429815">
-            <stringProp name="53">5</stringProp>
-            <stringProp name="50645">335</stringProp>
-            <stringProp name="53">5</stringProp>
-            <stringProp name="1722">60</stringProp>
-            <stringProp name="48">0</stringProp>
-          </collectionProp>
-        </collectionProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Simple 25 VU Only" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
-        <stringProp name="TestPlan.comments">Check the server is holding for 25  VU at any point
-
-Initial time of a record = initialtime + start up time/ramp-up time + holdtime of the previous record
-start up time/ramp-up time = Shutdown time/ramp-down time of the previous record</stringProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-      </kg.apc.jmeter.threads.UltimateThreadGroup>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+      </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="filename">/path.csv</stringProp>
@@ -73,7 +39,7 @@ start up time/ramp-up time = Shutdown time/ramp-down time of the previous record
           <stringProp name="shareMode">shareMode.all</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="{parameterize} Challenge Page with Filters - HTTP Request" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Challenge Page with Filters - HTTP Request" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -81,7 +47,7 @@ start up time/ramp-up time = Shutdown time/ramp-down time of the previous record
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <stringProp name="HTTPSampler.path">/v5/challenges/?startDateEnd=2020-11-30T06%3A30%3A00.000Z&amp;endDateStart=2020-11-01T06%3A30%3A00.000Z&amp;status=Active&amp;isLightweight=true&amp;perPage=1&amp;tracks[]=Dev&amp;tracks[]=Des&amp;tracks[]=DS&amp;tracks[]=QA</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
