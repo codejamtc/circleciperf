@@ -13,14 +13,12 @@
                 <artifactId>jmeter-maven-plugin</artifactId>
                 <version>2.8.0</version>
                 <executions>
-                    <!-- Run JMeter tests -->
                     <execution>
                         <id>jmeter-tests</id>
                         <goals>
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
-                    <!-- Fail build on errors in test -->
                     <execution>
                         <id>jmeter-check-results</id>
                         <goals>
