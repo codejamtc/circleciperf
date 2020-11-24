@@ -41,3 +41,6 @@ jobs:
 
       - store_artifacts:
           path: target/jmeter/reports
+          
+      - store_test_results:
+          path: test-results
