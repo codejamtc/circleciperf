@@ -43,4 +43,4 @@ jobs:
           path: target/jmeter/reports
           
       - store_test_results:
-          path: target/jmeter/test-results
+          path: target/jmeter/reports
