@@ -33,12 +33,15 @@
             <goals>
                 <goal>results</goal>
             </goals>
-			<jmeterExtensions>
-
-<artifact>kg.apc:jmeter-plugins-casutg:2.4</artifact>
-                    </jmeterExtensions>
         </execution>
     </executions>
+	<jmeterExtensions>
+		<artifact>kg.apc:jmeter-plugins-standard:1.4.0</artifact>
+		<artifact>kg.apc:jmeter-plugins-extras:1.4.0</artifact>
+		<artifact>kg.apc:jmeter-plugins-graphs-basic:2.0</artifact>
+		<artifact>kg.apc:jmeter-plugins-graphs-additional:2.0</artifact>
+    </jmeterExtensions>
+
 </plugin>
         </plugins>
     </build>
