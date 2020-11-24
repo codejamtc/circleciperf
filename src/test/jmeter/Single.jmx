@@ -35,7 +35,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/${path}</stringProp>
+          <stringProp name="HTTPSampler.path">/v5/challenges/?startDateEnd=2020-11-30T06%3A30%3A00.000Z&amp;endDateStart=2020-11-01T06%3A30%3A00.000Z&amp;status=Active&amp;isLightweight=true&amp;perPage=1&amp;tracks[]=Dev&amp;tracks[]=Des&amp;tracks[]=DS&amp;tracks[]=QA</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
