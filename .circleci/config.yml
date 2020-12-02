@@ -49,5 +49,5 @@ workflows:
   version: 2
   Performance-Testing:
     jobs:
-      - "Connect-Performance-Testing"
+      - Connect-Performance-Testing
             type: approval
