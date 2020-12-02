@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  "Connect-Performance-Testing":
+  Connect-Performance-Testing:
     docker:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
@@ -49,5 +49,5 @@ workflows:
   version: 2
   Performance-Testing:
     jobs:
-      - Connect-Performance-Testing
+      - Connect-Performance-Testing:
             type: approval
