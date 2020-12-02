@@ -148,7 +148,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - test:
+      - tc-project-service:
           context : org-global
           type: approval
       - deployDev:
